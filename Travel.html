@@ -1,0 +1,192 @@
+<html ng-app="myApp">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial scale = 1.00">
+        <link rel="stylesheet" href="Travel.css">
+        <title>Travel Booking</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+     <script src="Travel.js"></script>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <h4>Pack Your Bags</h4>
+                <ul>
+                    <li><a href="#">Destinations</a></li>
+                    <li><a href="#">Deals</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Get Started</a></li>
+                </ul>
+            </nav>
+            <div class="content">
+                <div class="cont_bx">
+                    <h1>Explore yourself to the fullest</h1>
+                    <p>Book your dream vacations and enjoy the God-Given life</p>
+                    <button>Search vacations</button>
+                </div>
+                <div class="trip_bx">
+                    <div class="search_bx">
+                        <div class="card">
+                            <h2>Location</h2>
+                            <input type="text" placeholder="Enter Location">
+                        </div>
+                        <div class="card">
+                            <h2>Date</h2>
+                            <input type="date">
+                        </div>    
+                        <div class="card">
+                            <h2>Travellers</h2>
+                            <input type="number" placeholder="Enter no of Tourists">
+                        </div>
+                        <input type="button" value="Explore Now">
+                    </div>
+                    <div class="flex-container">
+                        <div class="travel_bx">
+                            <h2>Countries</h2>
+                            
+                            <div class="cards" ng-controller="myCtrl">
+                                <div class="card">
+                                    <h3>INDIA <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Flag_of_India.svg/1200px-Flag_of_India.svg.png" alt=""></h3>
+                                    <img src="https://images.news18.com/ibnlive/uploads/2023/05/india-gate-1-16841363083x2.png" alt="">
+                                    <div class="btn_city" ng-click="toggleText(1)" class="header .trip_bx .search_bx button]">
+                                        <a href="#">Facts</a>
+                                        <p ng-show="showText[1]" class="text">Delhi is the capital city of India. It has a population of more than 32 million.
+                                        <h5>Delhi NCR <br> <span>₹34000</span></h5>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <h3>USA <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt=""></h3>
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToW8aHGQ4i9cKoPIaN1kE65CQWsMET-FyO4thFVOBpPQ&s" alt="">
+                                    <div class="btn_city" ng-click="toggleText(2)" class="header .trip_bx .search_bx button">
+                                        <a href="#">Facts</a>
+                                        <p ng-show="showText[2]" class="text">New York is the biggest city of USA and is the second biggest city in the World after Tokyo.<br> 
+                                        <h5>New York<br> <span>₹205000</span></h5>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <h3>FRANCE <img src="https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg" alt=""></h3>
+                                    <img src="https://www.travelandleisure.com/thmb/SPUPzO88ZXq6P4Sm4mC5Xuinoik=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/eiffel-tower-paris-france-EIFFEL0217-6ccc3553e98946f18c893018d5b42bde.jpg" alt="">
+                                    <div class="btn_city" ng-click="toggleText(3)" class="header .trip_bx .search_bx button">
+                                        <a href="#">Facts</a>
+                                        <p ng-show="showText[3]" class="text">Paris is the capital of France. It has been one of the most beatiful cities all around the globe.
+                                        <h5>Paris<br> <span>₹162000</span></h5>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <h3>UAE <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flag_of_the_United_Arab_Emirates.svg/1280px-Flag_of_the_United_Arab_Emirates.svg.png" alt=""></h3>
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSbuQkciZVwhFN5QYn_KCqvhLmSg-2VsF4QpqyS3djiA&s" alt="">
+                                    <div class="btn_city" ng-click="toggleText(4)" class="header .trip_bx .search_bx button">
+                                        <a href="#">Facts</a>
+                                        <p ng-show="showText[4]" class="text">Dubai is the biggest city of UAE. It is also the most luxurious city in the world.
+                                        <h5>Dubai<br> <span>₹95000</span></h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </header>
+         
+        
+        <div class="offers">
+            <h1>Best packages for you</h1>
+            <p>Choose your next Destination</p>
+            <div class="cards">
+                <div class="card">
+                    <h3>Lotus Temple</h3>
+                    <div class="img_text">
+                        <img src="https://www.pandotrip.com/wp-content/uploads/2022/10/The-Lotus-Temple-a-Blossom-of-Inspiring-Architecture-in-India.jpg" alt="">
+                        <h4>Travel, Hotels, Food Included</h4>
+                    </div>
+                    <div class="cont_bx">
+                        <div class="price">
+                            <div class="info_price">
+                                <a href="https://en.wikipedia.org/wiki/Lotus_Temple" target="_blank">More Info</a>
+                                <h4>₹27600</h4>
+                            </div>
+                        </div>
+                        <div class="days">4 DAYS</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>Burj Khalifa</h3>
+                    <div class="img_text">
+                        <img src="https://pressreleasenetwork.com/site/wp-content/uploads/2022/11/EMAAR_NYE_2023_01-scaled.jpg" alt="">
+                        <h4>Travel, Hotels, Food Included</h4>
+                    </div>
+                    <div class="cont_bx">
+                        <div class="price">
+                            <div class="info_price">
+                                <a href="https://en.wikipedia.org/wiki/Burj_Khalifa" target="_blank">More Info</a>
+                                <h4>₹89020</h4>
+                            </div>
+                        </div>
+                        <div class="days">5 DAYS</div>
+                    </div> 
+                </div>
+                <div class="card">
+                    <h3>Singapore</h3>
+                    <div class="img_text">
+                        <img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/07/3d/9f/2d.jpg" alt="">
+                        <h4>Travel, Hotels, Food Included</h4>
+                    </div>
+                    <div class="cont_bx">
+                        <div class="price">
+                            <div class="info_price">
+                                <a href="https://en.wikipedia.org/wiki/Merlion" target="_blank">More Info</a>
+                                <h4>₹63490</h4>
+                            </div>
+                        </div>
+                        <div class="days">3 DAYS</div>
+                    </div> 
+                </div>
+                <div class="card">
+                    <h3>African Safari</h3>
+                    <div class="img_text">
+                        <img src="https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iKg9M_NJIGqk/v1/-1x-1.jpg" alt="">
+                        <h4>Travel, Hotels, Food Included</h4>
+                    </div>
+                    <div class="cont_bx">
+                        <div class="price">
+                            <div class="info_price">
+                                <a href="https://en.wikipedia.org/wiki/South_Africa" target="_blank">More Info</a>
+                                <h4>₹100200</h4>
+                            </div>
+                        </div>
+                        <div class="days">7 DAYS</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+            <div class="destination">
+                <div class="des_bx">
+                    <h4>Your Destinations</h4>
+                    <p>Choose your mind relaxer</p>
+                    <li>INDIA</li>
+                    <li>USA</li>
+                    <li>FRANCE</li>
+                    <li>UAE</li>
+                    <li>SINGAPORE</li>
+                    <li>RWANDA</li>
+                    <h6>Includes Tickets, Food, Stays and Fun</h6>
+                    <button>MORE INFO</button>
+                </div>
+                <div class="img_bx">
+                    <img src="https://media.cnn.com/api/v1/images/stellar/prod/150428144400-emirates-a380-plane.jpg?q=w_3000,h_1564,x_0,y_0,c_fill" alt="">
+                </div>
+            </div>
+
+            <footer>
+                <h2>Come With Us<br> Travel the World</h2>
+                <p>Explore your Inner-Self</p>
+                
+                <ul>
+                    <li>12+ <br> years of services</li>
+                    <li>2M+ <br> Subscribers</li>
+                    <li>100+ <br>Airlines <br> Partners</li>
+                </ul>
+            </footer>    
+    </body>
+</html>
